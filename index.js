@@ -10,7 +10,7 @@ moveNPC()
 
 // Create the battery storage
 const inventory = newInventory()
-move(inventory).to(0, 0)
+move(inventory).to(0, 800)
 
 // Create everything else
 move(newImage('assets/trafficCone.png')).to(200, 450)
@@ -24,8 +24,8 @@ move(newItem('assets/gas.png')).to(450, 270)
 move(newItem('assets/gas.png')).to(600, 150)
 
 //finish line
-move(newImage('assets/finishLine.png')).to(0,700)
+move(newImage('assets/finishLine.png')).to(0,650)
 
 function finishLine(width,height,color,x,y){
-    
+
 }
