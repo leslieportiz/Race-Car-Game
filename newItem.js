@@ -1,4 +1,4 @@
-let percent = 0
+let percent = 50
 
   function newItem(url){
     let item = newImage(url)
