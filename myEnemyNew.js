@@ -1,5 +1,5 @@
-function newNonPlayableCharacter(x, y) {
-    let element = newImage('assets/red-character/front.png')
+function myEnemyNew(x, y) {
+    let element = newImage('assets/myEnemy/front.png')
     element.style.zIndex = 1;
     
     let direction = null;
@@ -25,35 +25,35 @@ function newNonPlayableCharacter(x, y) {
 
     async function walkEast(time) {
         direction = 'east'
-        element.src = `./assets/red-character/right.gif`
+        element.src = `./assets/myEnemy/right.gif`
         await sleep(time)
         return stop()
     }
 
     async function walkNorth(time) {
         direction = 'north'
-        element.src = `./assets/red-character/up.gif`
+        element.src = `./assets/myEnemy/up.gif`
         await sleep(time)
         return stop()
     }
 
     async function walkWest(time) {
         direction = 'west'
-        element.src = `./assets/red-character/left.gif`
+        element.src = `./assets/myEnemy/left.gif`
         await sleep(time)
         return stop()
     }
 
     async function walkSouth(time) {
         direction = 'south'
-        element.src = `./assets/red-character/down.gif`
+        element.src = `./assets/myEnemy/down.gif`
         await sleep(time)
         return stop()
     }
 
     function stop() {
         direction = null
-        element.src = `./assets/red-character/front.png`
+        element.src = `./assets/myEnemy/front.png`
     }
     
 

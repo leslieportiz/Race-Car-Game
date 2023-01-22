@@ -9,9 +9,6 @@ let percent = 0
         percentH1.innerText = percent
         inventory.append(percentH1)
         console.log(percent)
-        // let inventoryItem = document.createElement('img')
-        // inventoryItem.src = url;
-        // inventory.append(inventoryItem)
     })
     return item
 }           

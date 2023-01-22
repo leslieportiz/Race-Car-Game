@@ -1,22 +1,22 @@
-function newPlayableCharacter(x, y) {
-    const element = newImage('assets/player1/front.png')
+function myCarNew(x, y) {
+    const element = newImage('assets/myCar/front.png')
     element.style.zIndex = 1;
 
     function handleDirectionChange(direction) {
         if (direction === null) {
-            element.src = `assets/player1/front.png`
+            element.src = `assets/myCar/front.png`
         }
         if (direction === 'west') {
-            element.src = `assets/player1/left.gif`
+            element.src = `assets/myCar/left.gif`
         }
         if (direction === 'north') {
-            element.src = `assets/player1/up.gif`
+            element.src = `assets/myCar/up.gif`
         }
         if (direction === 'east') {
-            element.src = `assets/player1/right.gif`
+            element.src = `assets/myCar/right.gif`
         }
         if (direction === 'south') {
-            element.src = `assets/player1/down.gif`
+            element.src = `assets/myCar/down.gif`
         }
     }
 
