@@ -21,16 +21,50 @@ function move(element) {
 
         function moveCharacter() {
             if (direction === 'west') {
-                x -= 1
+                if ( percent == 75){
+                    x -= 2
+                }
+                else if(percent == 100){
+                    x -= 5
+                }
+                else{
+                    x -= 1
+                }
             }
             if (direction === 'north') {
-                y += 1
+                if ( percent == 75){
+                    y += 2
+                }
+                else if(percent == 100){
+                    y += 5
+                }
+                else{
+                    y += 1
+                }
+                
             }
             if (direction === 'east') {
-                x += 1
+                if ( percent == 75){
+                    x += 2
+                }
+                else if(percent == 100){
+                    x += 5
+                }
+                else{
+                    x += 1
+                }
+
             }
             if (direction === 'south') {
-                y -= 1
+                if ( percent == 75){
+                    y -= 2
+                }
+                else if(percent == 100){
+                    y -= 5
+                }
+                else{
+                    y -= 1
+                }
             }
             element.style.left = x + 'px'
             element.style.bottom = y + 'px'
@@ -43,15 +77,25 @@ function move(element) {
             //FINISH LINE
             if (y > 650) {
                 console.log("finish line")
+                congrats()
             }
-            //POWER UP
+            //POWER UP 1
             if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
-                console.log("powerUp")
-                console.log(percent)
                 percent += 25
                 let percentH1 = document.createElement('h1')
                 percentH1.innerText = percent
                 inventory.append(percentH1)
+                var cone = document.getElementById('cone0')
+                cone.remove()
+            }
+            //POWER UP 2
+            if (x >= 650 && y >= 450 && x <= 700 && y <= 500) {
+                percent += 25
+                let percentH1 = document.createElement('h1')
+                percentH1.innerText = percent
+                inventory.append(percentH1)
+                var cone2 = document.getElementById('cone1')
+                cone2.remove()
             }
 
             if (e.key === 'ArrowLeft') {
@@ -82,3 +126,7 @@ function move(element) {
     }
 }
 
+function congrats(){
+    move(newImage('assets/congrats.gif')).to(100, 0)
+    document.addEventListener('freeze')
+}

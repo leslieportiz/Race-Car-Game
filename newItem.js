@@ -1,9 +1,7 @@
 let percent = 50
 
-  function newItem(url){
-    let item = newImage(url)
-    // item.addEventListener('click', () => {
-    //     item.remove()
-    // })
-    return item
+function newItem(url,i){
+  let item = newImage(url)
+  item.setAttribute('id', `cone${i}`)
+  return item
 }           

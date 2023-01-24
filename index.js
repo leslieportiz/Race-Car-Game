@@ -55,8 +55,15 @@ move(newImage('assets/trafficCone.png')).to(850, 650)
 move(newImage('assets/trafficCone.png')).to(850, 700)
 
 //fuel
-move(newItem('assets/gas.png')).to(450, 270)
-move(newItem('assets/gas.png')).to(700, 500)
+var pos = [
+    `${450},${270}`,
+    `${700}, ${500}`
+]
+for(i = 0; i<2 ; i ++){
+    var x = +pos[i].substring(0,3)
+    var y = +pos[i].substring(8,3).slice(1)
+    move(newItem('assets/gas.png',i)).to(x,y)
+}
 
 //finish line
 move(newImage('assets/finishLine.png')).to(0,650)

@@ -6,16 +6,16 @@ function myEnemyNew(x, y) {
 
     function moveCharacter() {
         if (direction === 'west') {
-            x -= 1
+            x -= 0.5
         }
         if (direction === 'north') {
-            y += 1
+            y += 0.5
         }
         if (direction === 'east') {
-            x += 1
+            x += 0.5
         }
         if (direction === 'south') {
-            y -= 1
+            y -= 0.5
         }
         element.style.left = x + 'px'
         element.style.bottom = y + 'px'
@@ -55,6 +55,11 @@ function myEnemyNew(x, y) {
         direction = null
         element.src = `./assets/myEnemy/front.png`
     }
+
+    //enemy won
+    if(y > 650){
+        console.log("you lost")
+    }
     
 
     return {
@@ -65,6 +70,8 @@ function myEnemyNew(x, y) {
         walkSouth: walkSouth,
         stop: stop
     }
+
+    
 }
 
 function sleep(time) {
@@ -74,10 +81,12 @@ function sleep(time) {
 }
 
 async function moveEnemy() {
-    await enemy.walkEast(700)
-    await enemy.walkNorth(600)
-    await enemy.walkEast(1200)
-    await enemy.walkNorth(600)
-    await enemy.walkEast(700)
+    await enemy.walkEast(1300)
+    await enemy.walkNorth(900)
+    await enemy.walkEast(2200)
     await enemy.walkNorth(1200)
+    await enemy.walkEast(1200)
+    await enemy.walkNorth(2800)
+    move(newImage('assets/loser.gif')).to(100, 0)
+    await document.addEventListener('freeze')
 }
