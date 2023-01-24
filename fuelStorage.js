@@ -9,5 +9,15 @@ function fuelStorage(){
     inventory.style.border = '2px solid black'
     inventory.style.backgroundColor = 'green'
     document.body.append(inventory)
+
+    let speedOne = 25
+    let speedH1 = document.createElement('h1')
+    speedH1.innerText = speedOne
+    inventory.append(speedH1)
+
+    let speedOTwo = 50
+    let speed2H1 = document.createElement('h1')
+    speed2H1.innerText = speedOTwo
+    inventory.append(speed2H1)
     return inventory
 }

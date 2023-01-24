@@ -82,7 +82,7 @@ function move(element) {
             //POWER UP 1
             if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
                 percent += 25
-                let percentH1 = document.createElement('h1')
+                let percentH1= document.createElement('h1')
                 percentH1.innerText = percent
                 inventory.append(percentH1)
                 var cone = document.getElementById('cone0')
@@ -96,6 +96,15 @@ function move(element) {
                 inventory.append(percentH1)
                 var cone2 = document.getElementById('cone1')
                 cone2.remove()
+            }
+            //OUT OF BOUND
+            if (x<90 || x > 840){
+                // console.log("out of bound")
+                window.location = "outOfBound.html";
+            }
+            if (y<90 || y >800){
+                // console.log("out of bound")
+                window.location = "outOfBound.html";
             }
 
             if (e.key === 'ArrowLeft') {
@@ -127,6 +136,7 @@ function move(element) {
 }
 
 function congrats(){
-    move(newImage('assets/congrats.gif')).to(100, 0)
-    document.addEventListener('freeze')
+    // move(newImage('assets/congrats.gif')).to(100, 0)
+    // document.addEventListener('freeze')
+    window.location = "congrats.html";
 }

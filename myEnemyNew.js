@@ -87,6 +87,7 @@ async function moveEnemy() {
     await enemy.walkNorth(1200)
     await enemy.walkEast(1200)
     await enemy.walkNorth(2800)
-    move(newImage('assets/loser.gif')).to(100, 0)
-    await document.addEventListener('freeze')
+    // move(newImage('assets/loser.gif')).to(100, 0)
+    // await document.addEventListener('freeze')
+    window.location = "lost.html";
 }
