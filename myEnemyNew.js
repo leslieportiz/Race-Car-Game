@@ -80,11 +80,4 @@ async function moveEnemy() {
     await enemy.walkNorth(600)
     await enemy.walkEast(700)
     await enemy.walkNorth(1200)
-
-    // await enemy.walkSouth(300)
-    // await enemy.walkEast(1500)
-    // await enemy.walkSouth(1500)
-    // await enemy.walkWest(2700)
-    // enemy.walkNorth(400)
-
 }

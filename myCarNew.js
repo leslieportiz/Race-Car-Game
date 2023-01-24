@@ -22,6 +22,9 @@ function myCarNew(x, y) {
 
     move(element).withArrowKeys(x, y, handleDirectionChange)
 
+    // if (x > 150){
+    //     console.log("hello")
+    // }
     return {
         element: element
     }
