@@ -73,13 +73,18 @@ function sleep(time) {
     })
 }
 
-async function moveNPC() {
-    await npc.walkNorth(1400)
-    await npc.walkEast(1200)
-    await npc.walkSouth(300)
-    await npc.walkEast(1500)
-    await npc.walkSouth(1500)
-    await npc.walkWest(2700)
-    npc.walkNorth(400)
+async function moveEnemy() {
+    await enemy.walkEast(700)
+    await enemy.walkNorth(600)
+    await enemy.walkEast(1200)
+    await enemy.walkNorth(600)
+    await enemy.walkEast(700)
+    await enemy.walkNorth(1200)
+
+    // await enemy.walkSouth(300)
+    // await enemy.walkEast(1500)
+    // await enemy.walkSouth(1500)
+    // await enemy.walkWest(2700)
+    // enemy.walkNorth(400)
 
 }

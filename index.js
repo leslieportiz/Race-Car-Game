@@ -1,8 +1,8 @@
-const pc = myCarNew(100, 110)
+const car = myCarNew(100, 110)
 
-const npc = myEnemyNew(150, 110)
+const enemy = myEnemyNew(150, 110)
 
-moveNPC()
+moveEnemy()
 
 const inventory = fuelStorage()
 move(inventory).to(0, 800)
