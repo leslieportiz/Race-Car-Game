@@ -57,9 +57,9 @@ function myEnemyNew(x, y) {
     }
 
     //enemy won
-    if(y > 650){
-        console.log("you lost")
-    }
+    // if(y > 650){
+    //     console.log("you lost")
+    // }
     
 
     return {

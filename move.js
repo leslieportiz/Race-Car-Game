@@ -13,7 +13,7 @@ function move(element) {
         let x = left;
         let y = bottom;
 
-        console.log(x)
+        // console.log(x)
 
 
         element.style.left = x + 'px'
@@ -76,37 +76,31 @@ function move(element) {
             if (e.repeat) return;
             //FINISH LINE
             if (y > 650) {
-                console.log("finish line")
-                congrats()
+                window.location = "congrats.html";
             }
             //POWER UP 1
             if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
                 percent += 25
                 let percentH1= document.createElement('h1')
                 percentH1.innerText = percent
-                inventory.append(percentH1)
-                var cone = document.getElementById('cone0')
-                cone.remove()
+                tank.append(percentH1)
+                var fuel = document.getElementById('fuel0')
+                fuel.remove()
             }
             //POWER UP 2
             if (x >= 650 && y >= 450 && x <= 700 && y <= 500) {
                 percent += 25
                 let percentH1 = document.createElement('h1')
                 percentH1.innerText = percent
-                inventory.append(percentH1)
-                var cone2 = document.getElementById('cone1')
-                cone2.remove()
+                tank.append(percentH1)
+                var fuel2 = document.getElementById('fuel1')
+                fuel2.remove()
             }
             //OUT OF BOUND
-            if (x<90 || x > 840){
-                // console.log("out of bound")
+            if (x<90 || x > 900 || y<90 || y >800){
                 window.location = "outOfBound.html";
             }
-            if (y<90 || y >800){
-                // console.log("out of bound")
-                window.location = "outOfBound.html";
-            }
-
+        
             if (e.key === 'ArrowLeft') {
                 direction = 'west'
             }
@@ -135,8 +129,8 @@ function move(element) {
     }
 }
 
-function congrats(){
-    // move(newImage('assets/congrats.gif')).to(100, 0)
-    // document.addEventListener('freeze')
-    window.location = "congrats.html";
-}
+// function congrats(){
+//     // move(newImage('assets/congrats.gif')).to(100, 0)
+//     // document.addEventListener('freeze')
+//     window.location = "congrats.html";
+// }

@@ -1,23 +1,23 @@
 function fuelStorage(){
-    let inventory = document.createElement('div')
-    inventory.style.width = '100%'
-    inventory.style.height = '50px'
-    inventory.style.display = 'flex'
-    inventory.style.flexDirection = 'row'
-    inventory.style.alignItems = 'center'
-    inventory.style.justifyContent = 'space-evenly'
-    inventory.style.border = '2px solid black'
-    inventory.style.backgroundColor = 'green'
-    document.body.append(inventory)
+    let tank = document.createElement('div')
+    tank.style.width = '100%'
+    tank.style.height = '50px'
+    tank.style.display = 'flex'
+    tank.style.flexDirection = 'row'
+    tank.style.alignItems = 'center'
+    tank.style.justifyContent = 'space-evenly'
+    tank.style.border = '2px solid black'
+    tank.style.backgroundColor = 'green'
+    document.body.append(tank)
 
     let speedOne = 25
     let speedH1 = document.createElement('h1')
     speedH1.innerText = speedOne
-    inventory.append(speedH1)
+    tank.append(speedH1)
 
     let speedOTwo = 50
     let speed2H1 = document.createElement('h1')
     speed2H1.innerText = speedOTwo
-    inventory.append(speed2H1)
-    return inventory
+    tank.append(speed2H1)
+    return tank
 }

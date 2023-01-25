@@ -4,8 +4,8 @@ const enemy = myEnemyNew(150, 110)
 
 moveEnemy()
 
-const inventory = fuelStorage()
-move(inventory).to(0, 800)
+const tank = fuelStorage()
+move(tank).to(0, 800)
 //left side cones
 move(newImage('assets/trafficCone.png')).to(50, 100)
 move(newImage('assets/trafficCone.png')).to(50, 150)
