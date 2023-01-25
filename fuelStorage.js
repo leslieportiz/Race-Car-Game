@@ -10,14 +10,14 @@ function fuelStorage(){
     tank.style.backgroundColor = 'green'
     document.body.append(tank)
 
-    let speedOne = 25
-    let speedH1 = document.createElement('h1')
-    speedH1.innerText = speedOne
-    tank.append(speedH1)
+    // let speedOne = 25
+    // let speedH1 = document.createElement('h1')
+    // speedH1.innerText = speedOne
+    // tank.append(speedH1)
 
-    let speedOTwo = 50
-    let speed2H1 = document.createElement('h1')
-    speed2H1.innerText = speedOTwo
-    tank.append(speed2H1)
+    // let speedOTwo = 50
+    // let speed2H1 = document.createElement('h1')
+    // speed2H1.innerText = speedOTwo
+    // tank.append(speed2H1)
     return tank
 }
