@@ -5,3 +5,9 @@ function newItem(url,i){
   item.setAttribute('id', `fuel${i}`)
   return item
 }           
+
+function newCone(url,i){
+  let cone = newImage(url)
+  cone.setAttribute('id', `cone${i}`)
+  return cone
+}     
