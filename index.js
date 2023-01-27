@@ -24,9 +24,9 @@ var course = [
     `${150},${300}`,
     `${500},${200}`,
     `${300},${600}`,
-    `${450},${500}`,
+    `${450},${500}`
 ]
-for (i=0;i<course.lenght;i++){
+for (i=0;i<course.length;i++){
     var x = +course[i].substring(0,3)
     var y = +course[i].substring(8,3).slice(1)
     move(newItem('assets/trafficCone.png',i)).to(x, y)
