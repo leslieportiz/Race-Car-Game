@@ -10,4 +10,4 @@ function newCone(url,i){
   let cone = newImage(url)
   cone.setAttribute('id', `cone${i}`)
   return cone
-}     
+}       

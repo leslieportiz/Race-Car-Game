@@ -1,8 +1,8 @@
 # Race-Car-Game
-Milestone Project 1
+Project 1
 
 RACE CAR GAME FUNCTIONALITIES:
-AIM: TO GET TO THE FINISH LINE BEFORE THE ENEMY.
+AIM: TO GET TO THE FINISH LINE BEFORE THE ENEMY WITH AT LEAST 100 MILES PER HOUR.
 
 1. IF YOU REACH FINISH LINE YOU WIN.
 move.js
@@ -15,7 +15,171 @@ line 77
 
 THIS CALLS A NEW HTML FILE CALLED CONGRATS.HTML
 
-2. IF YOUR ENEMY REACHES THE FINISH LINE BEFORE YOU, YOU LOST.
+2. IF YOU GET TO THE FINISH LINE WITHOUT ENOUGH FUEL.
+move.js
+
+line 108
+if (y > 700 && percent < 100) {
+                console.log("Not Enough Fuel!")
+                window.location = "notEnoughFuel.html";
+}
+
+THIS CALLS A NEW HTML FILE CALLED NOTENOUGHFUEL.HTML
+
+3. OUT OF BOUND FROM CORNER.
+move.js
+
+line 149
+//OUT OF BOUND
+            if (x < 50 || x > 800 || y < 50) {
+                window.location = "outOfBound.html";
+            }
+
+THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
+
+4. BUMPING INTO COURSE CONE.
+move.js
+
+line 153
+//BUMP CONE
+            if (x >= 100 && y >= 250 && x <= 150 && y <= 300) {
+                window.location = "outOfBound.html";
+                // console.log("collide")
+            }
+            if (x >= 450 && y >= 150 && x <= 500 && y <= 200) {
+                window.location = "outOfBound.html";
+                // console.log("collide")
+            }
+            if (x >= 250 && y >= 550 && x <= 300 && y <= 600) {
+                window.location = "outOfBound.html";
+                // console.log("collide")
+            }
+            if (x >= 400 && y >= 450 && x <= 450 && y <= 500) {
+                window.location = "outOfBound.html";
+                // console.log("collide")
+            }
+
+THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
+
+5.COLLECTING FUEL
+move.js
+
+line 113-148
+//POWER UP 1
+            if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
+                percent += 25
+                let percentH1 = document.createElement('h1')
+                percentH1.innerText = percent
+                tank.append(percentH1)
+                var fuel = document.getElementById('fuel0')
+                // fuel.remove()
+            }
+            //POWER UP 2
+            if (x >= 650 && y >= 450 && x <= 700 && y <= 500) {
+                percent += 25
+                let percentH1 = document.createElement('h1')
+                percentH1.innerText = percent
+                tank.append(percentH1)
+                var fuel2 = document.getElementById('fuel1')
+                // fuel2.remove()
+            }
+            //POWER UP 3
+            if (x >= 600 && y >= 300 && x <= 650 && y <= 350) {
+                percent += 25
+                let percentH1 = document.createElement('h1')
+                percentH1.innerText = percent
+                tank.append(percentH1)
+                var fuel3 = document.getElementById('fuel2')
+                // fuel3.remove()
+            }
+            //POWER UP 4
+            if (x >= 150 && y >= 550 && x <= 200 && y <= 600) {
+                percent += 25
+                let percentH1 = document.createElement('h1')
+                percentH1.innerText = percent
+                tank.append(percentH1)
+                var fuel4 = document.getElementById('fuel3')
+                // fuel4.remove()
+            }
+
+SPEED
+move.js
+
+line 22-90
+function moveCharacter() {
+            if (direction === 'west') {
+                if (percent == 25) {
+                    x -= 2
+                }
+                else if (percent == 50) {
+                    x -= 3
+                }
+                else if (percent == 75) {
+                    x -= 4
+                }
+                else if (percent >= 100) {
+                    x -= 5
+                }
+                else {
+                    x -= 1
+                }
+            }
+            if (direction === 'north') {
+                if (percent == 25) {
+                    y += 2
+                }
+                else if (percent == 50) {
+                    y += 3
+                }
+                else if (percent == 75) {
+                    y += 4
+                }
+                else if (percent >= 100) {
+                    y += 5
+                }
+                else {
+                    y += 1
+                }
+
+            }
+            if (direction === 'east') {
+                if (percent == 25) {
+                    x += 2
+                }
+                else if (percent == 50) {
+                    x += 3
+                }
+                else if (percent == 75) {
+                    x += 4
+                }
+                else if (percent >= 100) {
+                    x += 5
+                }
+                else {
+                    x += 1
+                }
+
+            }
+            if (direction === 'south') {
+                if (percent == 25) {
+                    y -= 2
+                }
+                else if (percent == 50) {
+                    y -= 3
+                }
+                else if (percent == 75) {
+                    y -= 4
+                }
+                else if (percent >= 100) {
+                    y -= 5
+                }
+                else {
+                    y -= 1
+                }
+            }
+
+6. IF YOUR ENEMY REACHES THE FINISH LINE BEFORE YOU, 
+YOU LOST.
 
 CODED THE ENEMY TO MOVE TO SPECIFIC COURSE THEN FINISH LINE
 
@@ -35,61 +199,13 @@ async function moveEnemy() {
 
 CALLS A NEW WINDOW CALLED LOST.HTML
 
-3. IF YOU GO OUT OF BOUND YOU LOOSE:
-move.js 
-line 99
-//OUT OF BOUND
-            if (x<90 || x > 900 || y<90 || y >800){
-                window.location = "outOfBound.html";
-            }
-        
-CALLS A NEW HTML TO OPEN
-
-4. FOR EVERY HTML, YOU CAN GO BACK TO THE GAME 
+7. FOR EVERY HTML, YOU CAN GO BACK TO THE GAME 
 
 <a href="index.html">Go back to the game<a/>
 
-5. YOU CAN POWER UP AND SPEED UP BY GOING THROUGH CHEVRON
-move.js 
-line 81
-//POWER UP 1
-            if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
-                percent += 25
-                let percentH1= document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel = document.getElementById('fuel0')
-                fuel.remove()
-            }
-            //POWER UP 2
-            if (x >= 650 && y >= 450 && x <= 700 && y <= 500) {
-                percent += 25
-                let percentH1 = document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel2 = document.getElementById('fuel1')
-                fuel2.remove()
-            }
+congrats.html
+lost.html
+notEnoughFuel.html
+outOfBound.html
 
-6. FOR ME TO REMOVE EACH CHEVRON AS I USED IT, I HAD TO DECLARE A FOR LOOP:
-index.js 
-line 57
-//fuel
-var pos = [
-    `${450},${270}`,
-    `${700}, ${500}`
-]
-for(i = 0; i<2 ; i ++){
-    var x = +pos[i].substring(0,3)
-    var y = +pos[i].substring(8,3).slice(1)
-    move(newItem('assets/gas.png',i)).to(x,y)
-}
-
-POS IS AN ARRAY OF POSITIONS (X, Y COORDINATES) WHERE I WANT EACH CHEVRON TO BE POSITIONED. 
-FOR EVERY i UNTIL IT IS LESS THAN 2, I DECLARED A NEW VARIABLE X AND Y AND MADE IT = TO POS[i]
-I THEN USED THE move() function and newItem() function and passed the url for the image and the index.
-
-IN THE newItem.js FILE YOU WILL SEE newItem(url,i) 
-and you will use the passed variables to set the new image and to set an id for each chevron. (this is needed to delete specific 
-chevron image by id reffered to in power up conditions. 
 

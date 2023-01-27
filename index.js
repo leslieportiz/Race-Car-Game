@@ -25,8 +25,12 @@ var course = [
     `${500},${200}`,
     `${300},${600}`,
     `${450},${500}`,
-
 ]
+for (i=0;i<course.lenght;i++){
+    var x = +course[i].substring(0,3)
+    var y = +course[i].substring(8,3).slice(1)
+    move(newItem('assets/trafficCone.png',i)).to(x, y)
+}
 // var collideArray = []
 // for(i=0;i<course.length;i++){
 //     var x = +course[i].substring(0,3)
@@ -36,11 +40,6 @@ var course = [
 //     var add = `${first},${second},${x},${y}`
 //     collideArray.push(add)
 // }
-for (i=0;i<4;i++){
-    var x = +course[i].substring(0,3)
-    var y = +course[i].substring(8,3).slice(1)
-    move(newItem('assets/trafficCone.png',i)).to(x, y)
-}
 
 //fuel
 var pos = [
@@ -49,7 +48,7 @@ var pos = [
     `${650},${350}`,
     `${200}, ${600}`
 ]
-for(i = 0; i<4 ; i ++){
+for(i = 0; i<pos.length ; i ++){
     var x = +pos[i].substring(0,3)
     var y = +pos[i].substring(8,3).slice(1)
     move(newItem('assets/gas.png',i)).to(x,y)

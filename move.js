@@ -146,26 +146,26 @@ function move(element) {
                 var fuel4 = document.getElementById('fuel3')
                 // fuel4.remove()
             }
-            // OUT OF BOUND
+            //OUT OF BOUND
             if (x < 50 || x > 800 || y < 50) {
                 window.location = "outOfBound.html";
             }
-
+            //BUMP CONE
             if (x >= 100 && y >= 250 && x <= 150 && y <= 300) {
                 window.location = "outOfBound.html";
-                console.log("collide")
+                // console.log("collide")
             }
             if (x >= 450 && y >= 150 && x <= 500 && y <= 200) {
                 window.location = "outOfBound.html";
-                console.log("collide")
+                // console.log("collide")
             }
             if (x >= 250 && y >= 550 && x <= 300 && y <= 600) {
                 window.location = "outOfBound.html";
-                console.log("collide")
+                // console.log("collide")
             }
             if (x >= 400 && y >= 450 && x <= 450 && y <= 500) {
                 window.location = "outOfBound.html";
-                console.log("collide")
+                // console.log("collide")
             }
 
             if (e.key === 'ArrowLeft') {
