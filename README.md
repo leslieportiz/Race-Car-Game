@@ -7,7 +7,7 @@ AIM: TO GET TO THE FINISH LINE BEFORE THE ENEMY WITH AT LEAST 100 MILES PER HOUR
 1. IF YOU REACH FINISH LINE YOU WIN.
 move.js
 
-line 77
+line 103-107
 //FINISH LINE
             if (y > 650) {
                 window.location = "congrats.html";
@@ -15,10 +15,15 @@ line 77
 
 THIS CALLS A NEW HTML FILE CALLED CONGRATS.HTML
 
+ADDED A NEXT LEVEL HTML CALLED TEST2.HTML. 
+
+LEVEL 1 SHOWS ALL THE FUNCTIONALITIES
+LEVEL 2 SHOWS CONTINUITY OF THE GAME BUT NOT ALL THE FUNCTIONALITIES
+
 2. IF YOU GET TO THE FINISH LINE WITHOUT ENOUGH FUEL.
 move.js
 
-line 108
+line 108-111
 if (y > 700 && percent < 100) {
                 console.log("Not Enough Fuel!")
                 window.location = "notEnoughFuel.html";
@@ -29,7 +34,7 @@ THIS CALLS A NEW HTML FILE CALLED NOTENOUGHFUEL.HTML
 3. OUT OF BOUND FROM CORNER.
 move.js
 
-line 149
+line 150-152
 //OUT OF BOUND
             if (x < 50 || x > 800 || y < 50) {
                 window.location = "outOfBound.html";
@@ -40,7 +45,7 @@ THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
 4. BUMPING INTO COURSE CONE.
 move.js
 
-line 153
+line 154-169
 //BUMP CONE
             if (x >= 100 && y >= 250 && x <= 150 && y <= 300) {
                 window.location = "outOfBound.html";
@@ -64,7 +69,7 @@ THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
 5.COLLECTING FUEL
 move.js
 
-line 113-148
+line 114-148
 //POWER UP 1
             if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
                 percent += 25
@@ -105,7 +110,7 @@ line 113-148
 SPEED
 move.js
 
-line 22-90
+line 22-95
 function moveCharacter() {
             if (direction === 'west') {
                 if (percent == 25) {
@@ -184,7 +189,7 @@ YOU LOST.
 CODED THE ENEMY TO MOVE TO SPECIFIC COURSE THEN FINISH LINE
 
 myEnemyNew.js
-line 83
+line 83-93
 async function moveEnemy() {
     await enemy.walkEast(1300)
     await enemy.walkNorth(900)
@@ -207,5 +212,6 @@ congrats.html
 lost.html
 notEnoughFuel.html
 outOfBound.html
+
 
 
