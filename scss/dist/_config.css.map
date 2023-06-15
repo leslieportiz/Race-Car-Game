@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["_config.scss"],"sourcesContent":["$font-stack: Trebuchet MS, Arial, sans-serif;\r\n$light-color: #FFC300;\r\n$primary-color: #000814;\r\n$secondary-color: #a2d0fc;"],"file":"_config.css"}
