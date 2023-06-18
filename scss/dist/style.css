@@ -18,4 +18,16 @@ h2 {
   color: #241a81;
 }
 
+.startGame {
+  font-size: 80px;
+  color: darkblue;
+  background-color: #228cd2;
+  display: flex;
+  justify-content: center;
+}
+
+.startGame a:hover {
+  color: pink;
+}
+
 /*# sourceMappingURL=style.css.map */
