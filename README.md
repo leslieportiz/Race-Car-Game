@@ -81,7 +81,7 @@ Your car's speed increases with higher fuel percentages.
         window.location = "lost.html";
     }
 
-    This calls a new window called lost.html.
+This calls a new window called lost.html.
 
 ### HTML Pages
 
@@ -95,7 +95,8 @@ The game includes several HTML pages for different scenarios. Each HTML page pro
     To go back to the game from any of these HTML pages, click on the following link:
 
     ```html
-    <a href="index.html">
+    <a href="index.html">Go back to the game</a>
+
 
 ### Issues
     Added a next level HTML called Test2.HTML.
