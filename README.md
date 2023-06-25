@@ -37,7 +37,7 @@ This call a new HTML file called notEnoughFuel.html.
         window.location = "outOfBound.html";
     }
 
-This calls a new htmlfile called outofbound.html.
+This calls a new html file called outOfBound.html.
    
 4. Bumping into Course Cone:
     * If you bump into the course cone, you lose.
@@ -92,10 +92,7 @@ The game includes several HTML pages for different scenarios. Each HTML page pro
     lost.html: Displayed when the enemy reaches the finish line before you.
     notEnoughFuel.html: Displayed when you reach the finish line without enough fuel.
     outOfBound.html: Displayed when you go out of bounds or bump into a course cone.
-    
-To go back to the game from any of these HTML pages, click on the following link:
-    ```html
-    <a href="index.html">
+    index.html: To go back to the game from any of these HTML pages.
 
 ## Demo & Technologies
 
@@ -103,18 +100,17 @@ To go back to the game from any of these HTML pages, click on the following link
 
 1. Clone or download the Race Car Game repository from GitHub: 
 
-[Race Car Game] (https://github.com/leslieportiz/Race-Car-Game.git)
+[Race Car Game](https://github.com/leslieportiz/Race-Car-Game.git/)
 
 2. Navigate to Race Car Game directory through terminal or command prompt.
 3. Download the Node.js from website:
 
-[Node.js] (https://nodejs.org/)
+[Node.js](https://nodejs.org/)
 
 4. Run the following command to install Race Car Game dependencies:
 
     ```sql
     npm install
-
 
 5. Start the game locally using the following command:
 
@@ -123,7 +119,7 @@ To go back to the game from any of these HTML pages, click on the following link
 
 6. Enter the following URL to access the Race Car Game by opening the browser:
 
-[localhost](http://localhost:9000)
+[localhost](http://localhost:9000/)
 
 7. Play the game using the cursor control keys and aim to reach the finish line before the enemy with at least 100 miles per hour.
 
@@ -152,6 +148,6 @@ Please let me know if you encounter any problem during the set up or installatio
 
 2. Future features:
     * To add multiple levels.
-    * To add prizes.
+    * To add prizes and awards.
     * To add more enemies. 
     * To add license.
