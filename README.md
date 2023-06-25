@@ -6,8 +6,8 @@
 
 
 1. Winning the Game: 
-    *If you reach the finish line, you win the game.
-    *Code snippet in move.js:
+    * If you reach the finish line, you win the game.
+    * Code snippet in move.js:
     ```javascript
     //FINISH LINE
     if (y > 650) {
@@ -95,11 +95,13 @@ The game includes several HTML pages for different scenarios. Each HTML page pro
     To go back to the game from any of these HTML pages, click on the following link:
 
     ```html
-    <a href="index.html">Go back to the game</a>
+    <a href="index.html">
 
 
 ### Issues
-    Added a next level HTML called Test2.HTML.
-    Level 2 shows continuity of the game but not all the functionalities.
+
+    * Added a next level, Level 2, HTML called Test2.HTML. Level 2 shows continuity of the game but not all the functionalities.
+    * The game is running on a local host, it needs to be in the web and also to add multiple levels.
+
 
 
