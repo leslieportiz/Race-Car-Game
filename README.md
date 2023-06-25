@@ -93,14 +93,43 @@ The game includes several HTML pages for different scenarios. Each HTML page pro
     notEnoughFuel.html: Displayed when you reach the finish line without enough fuel.
     outOfBound.html: Displayed when you go out of bounds or bump into a course cone.
     
-    To go back to the game from any of these HTML pages, click on the following link:
-    
+To go back to the game from any of these HTML pages, click on the following link:
     ```html
-    <a href="index.html"
+    <a href="index.html">
 
-## Demo
+## Demo & Technologies
 
-## Technologies
+### Race Car Game installation and set up
+
+1. Clone or download the Race Car Game repository from GitHub: 
+
+[Race Car Game] (https://github.com/leslieportiz/Race-Car-Game.git)
+
+2. Navigate to Race Car Game directory through terminal or command prompt.
+3. Download the Node.js from website:
+
+[Node.js] (https://nodejs.org/)
+
+4. Run the following command to install Race Car Game dependencies:
+
+    ```sql
+    npm install
+
+
+5. Start the game locally using the following command:
+
+    ```sql
+    npm start
+
+6. Enter the following URL to access the Race Car Game by opening the browser:
+
+[localhost](http://localhost:9000)
+
+7. Play the game using the cursor control keys and aim to reach the finish line before the enemy with at least 100 miles per hour.
+
+Enjoy playing the Race Car Game locally!
+
+Please let me know if you encounter any problem during the set up or installation process. I'll be happy to assist you further.
 
 ## Technical Information
 
@@ -113,7 +142,7 @@ The game includes several HTML pages for different scenarios. Each HTML page pro
 5. After you are contented with your changes, commit using descriptive messages.
 6. Push the changes and create a pull request.
 7. Get involve in the pull request analysis, consolidation and code review.
-8. Once the changes pass and issues are resolved, your pull request will be merged into the main Race Car Game and will be part of the deplorment. 
+8. Once the changes pass and issues are resolved, your pull request will be merged into the main Race Car Game and will be part of the deployment. 
 
 ## Issues
 
