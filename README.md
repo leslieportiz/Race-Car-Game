@@ -1,217 +1,98 @@
-# Race-Car-Game
-Project 1
+# Race Car Game
 
-RACE CAR GAME FUNCTIONALITIES:
-AIM: TO GET TO THE FINISH LINE BEFORE THE ENEMY WITH AT LEAST 100 MILES PER HOUR.
+    The Race Car Game is an exciting game where the aim is to reach the finish line before the enemy, with a speed of at least 100 miles per hour. 
 
-1. IF YOU REACH FINISH LINE YOU WIN.
-move.js
+### Game Functionalities
 
-line 103-107
-//FINISH LINE
-            if (y > 650) {
-                window.location = "congrats.html";
-            }
 
-THIS CALLS A NEW HTML FILE CALLED CONGRATS.HTML
+1. Winning the Game: 
+    *If you reach the finish line, you win the game.
+    *Code snippet in move.js:
 
-ADDED A NEXT LEVEL HTML CALLED TEST2.HTML. 
+    ```javascript
+    //FINISH LINE
+    if (y > 650) {
+        window.location = "congrats.html";
+    }
 
-LEVEL 1 SHOWS ALL THE FUNCTIONALITIES
-LEVEL 2 SHOWS CONTINUITY OF THE GAME BUT NOT ALL THE FUNCTIONALITIES
+    This calls a new HTML file called congrats.html.
 
-2. IF YOU GET TO THE FINISH LINE WITHOUT ENOUGH FUEL.
-move.js
+2. Not Enough Fuel:
+    *If you reach the finish line without enough fuel, you lose.
+    *Code snippet in move.js:
+    if (y > 700 && percent < 100) {
+        console.log("Not Enough Fuel!")
+        window.location = "notEnoughFuel.html";
+    }
 
-line 108-111
-if (y > 700 && percent < 100) {
-                console.log("Not Enough Fuel!")
-                window.location = "notEnoughFuel.html";
-}
+    This call a new HTML file called notEnoughFuel.html.
 
-THIS CALLS A NEW HTML FILE CALLED NOTENOUGHFUEL.HTML
+3. Out of Bounds:
+    *If you go out of bounds from the corner, you lose.
+    *Code snippet in move.js:
+    //OUT OF BOUND
+    if (x < 50 || x > 800 || y < 50) {
+        window.location = "outOfBound.html";
+    }
 
-3. OUT OF BOUND FROM CORNER.
-move.js
+    This calls a new htmlfile called outofbound.html.
+   
+4. Bumping into Course Cone:
+    *If you bump into the course cone, you lose.
+    *Code snippet in move.js:
+    //BUMP CONE
+    if (x >= 100 && y >= 250 && x <= 150 && y <= 300) {
+        window.location = "outOfBound.html";
+    }
+    // Other similar conditions for bumping into course cones
 
-line 150-152
-//OUT OF BOUND
-            if (x < 50 || x > 800 || y < 50) {
-                window.location = "outOfBound.html";
-            }
+    This calls a new HTML file called outOfBound.html.
 
-THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
+5. Collecting Fuel:
+    *You can collect fuel power-ups to increase your speed.
+    *Code snippet in move.js:
+    //POWER UP 1
+    if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
+        percent += 25
+        // Code for updating fuel percentage and removing the fuel power-up
+    }
+    // other similar conditions for collecting fuel power ups
+        
+    The collected fuel power-ups increase the speed of your car.
 
-4. BUMPING INTO COURSE CONE.
-move.js
+6. Speed:
+    *Your speed is determined by the fuel percentage.
+    *Code snippet in move.js:
+    // Calculation of speed based on fuel percentage
+    // Speed values for different fuel percentages
 
-line 154-169
-//BUMP CONE
-            if (x >= 100 && y >= 250 && x <= 150 && y <= 300) {
-                window.location = "outOfBound.html";
-                // console.log("collide")
-            }
-            if (x >= 450 && y >= 150 && x <= 500 && y <= 200) {
-                window.location = "outOfBound.html";
-                // console.log("collide")
-            }
-            if (x >= 250 && y >= 550 && x <= 300 && y <= 600) {
-                window.location = "outOfBound.html";
-                // console.log("collide")
-            }
-            if (x >= 400 && y >= 450 && x <= 450 && y <= 500) {
-                window.location = "outOfBound.html";
-                // console.log("collide")
-            }
+    Your car's speed increases with higher fuel percentages.
 
-THIS CALLS A NEW HTML FILE CALLED OUTOFBOUND.HTML
+7. Losing the Game:
+    *If the enemy reaches the finish line before you, you lose.
+    *Code snippet in myEnemyNew.js:
+    async function moveEnemy() {
+        // Code for enemy movement towards the finish line
+        window.location = "lost.html";
+    }
 
-5.COLLECTING FUEL
-move.js
+    This calls a new window called lost.html.
 
-line 114-148
-//POWER UP 1
-            if (x >= 400 && y >= 220 && x <= 450 && y <= 270) {
-                percent += 25
-                let percentH1 = document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel = document.getElementById('fuel0')
-                // fuel.remove()
-            }
-            //POWER UP 2
-            if (x >= 650 && y >= 450 && x <= 700 && y <= 500) {
-                percent += 25
-                let percentH1 = document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel2 = document.getElementById('fuel1')
-                // fuel2.remove()
-            }
-            //POWER UP 3
-            if (x >= 600 && y >= 300 && x <= 650 && y <= 350) {
-                percent += 25
-                let percentH1 = document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel3 = document.getElementById('fuel2')
-                // fuel3.remove()
-            }
-            //POWER UP 4
-            if (x >= 150 && y >= 550 && x <= 200 && y <= 600) {
-                percent += 25
-                let percentH1 = document.createElement('h1')
-                percentH1.innerText = percent
-                tank.append(percentH1)
-                var fuel4 = document.getElementById('fuel3')
-                // fuel4.remove()
-            }
+### HTML Pages
 
-SPEED
-move.js
+The game includes several HTML pages for different scenarios. Each HTML page provides a way to go back to the game.
 
-line 22-95
-function moveCharacter() {
-            if (direction === 'west') {
-                if (percent == 25) {
-                    x -= 2
-                }
-                else if (percent == 50) {
-                    x -= 3
-                }
-                else if (percent == 75) {
-                    x -= 4
-                }
-                else if (percent >= 100) {
-                    x -= 5
-                }
-                else {
-                    x -= 1
-                }
-            }
-            if (direction === 'north') {
-                if (percent == 25) {
-                    y += 2
-                }
-                else if (percent == 50) {
-                    y += 3
-                }
-                else if (percent == 75) {
-                    y += 4
-                }
-                else if (percent >= 100) {
-                    y += 5
-                }
-                else {
-                    y += 1
-                }
+    congrats.html: Displayed when you win the game.
+    lost.html: Displayed when the enemy reaches the finish line before you.
+    notEnoughFuel.html: Displayed when you reach the finish line without enough fuel.
+    outOfBound.html: Displayed when you go out of bounds or bump into a course cone.
+    
+    To go back to the game from any of these HTML pages, click on the following link:
+    
+    <a href="index.html">Go back to the game</a>
 
-            }
-            if (direction === 'east') {
-                if (percent == 25) {
-                    x += 2
-                }
-                else if (percent == 50) {
-                    x += 3
-                }
-                else if (percent == 75) {
-                    x += 4
-                }
-                else if (percent >= 100) {
-                    x += 5
-                }
-                else {
-                    x += 1
-                }
-
-            }
-            if (direction === 'south') {
-                if (percent == 25) {
-                    y -= 2
-                }
-                else if (percent == 50) {
-                    y -= 3
-                }
-                else if (percent == 75) {
-                    y -= 4
-                }
-                else if (percent >= 100) {
-                    y -= 5
-                }
-                else {
-                    y -= 1
-                }
-            }
-
-6. IF YOUR ENEMY REACHES THE FINISH LINE BEFORE YOU, 
-YOU LOST.
-
-CODED THE ENEMY TO MOVE TO SPECIFIC COURSE THEN FINISH LINE
-
-myEnemyNew.js
-line 83-93
-async function moveEnemy() {
-    await enemy.walkEast(1300)
-    await enemy.walkNorth(900)
-    await enemy.walkEast(2200)
-    await enemy.walkNorth(1200)
-    await enemy.walkEast(1200)
-    await enemy.walkNorth(2800)
-    // move(newImage('assets/loser.gif')).to(100, 0)
-    // await document.addEventListener('freeze')
-    window.location = "lost.html";
-}
-
-CALLS A NEW WINDOW CALLED LOST.HTML
-
-7. FOR EVERY HTML, YOU CAN GO BACK TO THE GAME 
-
-<a href="index.html">Go back to the game<a/>
-
-congrats.html
-lost.html
-notEnoughFuel.html
-outOfBound.html
-
+### Issues
+    Added a next level HTML called Test2.HTML.
+    Level 2 shows continuity of the game but not all the functionalities.
 
 
